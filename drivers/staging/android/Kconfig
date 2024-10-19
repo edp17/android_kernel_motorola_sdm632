@@ -50,6 +50,15 @@ config ANDROID_VSOC
 	  a 'cuttlefish' Android image inside QEmu. The driver interacts with
 	  a QEmu ivshmem device. If built as a module, it will be called vsoc.
 
+config SW_SYNC_USER
+    bool "Userspace API for SW_SYNC"
+    default n
+    depends on SW_SYNC
+    help
+      Provides a user space API to the sw sync object.
+      *WARNING* improper use of this can result in deadlocking kernel
+      drivers from userspace.
+
 source "drivers/staging/android/ion/Kconfig"
 
 endif # if ANDROID
