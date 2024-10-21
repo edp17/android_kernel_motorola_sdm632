@@ -29,4 +29,13 @@ config SW_SYNC
 	  WARNING: improper use of this can result in deadlocking kernel
 	  drivers from userspace. Intended for test and debug only.
 
+config SW_SYNC_USER
+    bool "Userspace API for SW_SYNC"
+    default n
+    depends on SW_SYNC
+    help
+      Provides a user space API to the sw sync object.
+      *WARNING* improper use of this can result in deadlocking kernel
+      drivers from userspace.
+
 endmenu
